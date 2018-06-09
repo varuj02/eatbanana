@@ -11,14 +11,29 @@
             overflow: hidden;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id = "HUD">
-    <snap id = "score"></snap>
-    <snap id = "life"></snap>
-</div>
+    <div class='main'>
+        <div id="HUD">
+            <snap id="score"></snap>
+            <snap id="life"></snap>
+            <snap id="coin"></snap>
+        </div>
+
+    </div>
+    <div id = 'shop'>
+        <h2>Shop</h2>
+        <div class = "item" id = 'minion'>
+            <h3>Minion</h3>
+            <img src="images/minion_R.png" >
+            <snap class = 'price'>Price: 50coin</snap>
+            <snap class = 'buy'>Buy</snap>
+        </div>
+    </div>
     <!-- <script src="/socket.io/socket.io.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
     <script src="functions.js"></script>
