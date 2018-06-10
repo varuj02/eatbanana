@@ -9,7 +9,7 @@ function drawResurces() {
     for (let banana of bananas) {
         let x = banana.x;
         let y = banana.y;
-        image(images.ananas, x, y, side, side);
+        image(scoreimg, x, y, side, side);
         banana.y += bananaStep;
     }
     for (let heart of hearts) {
