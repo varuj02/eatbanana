@@ -3,7 +3,7 @@ var canvasWidth = 18;
 var side = 50;
 
 var bananas = [], hearts = [], coins = []
-var player = { x: 0, y: (canvasHeight - 2) * side, score: 0, life: 5, coin:10000 }
+var player = { x: 0, y: (canvasHeight - 2) * side, score: 0, life: 5, coin:0 }
 var interval = 100;// /FPS  sec
 var time = 1000; //sec
 var time2 = 0;
@@ -37,7 +37,7 @@ function setup() {
     };
     playerimg = { L: images.monkey_L, R: images.monkey_R };
     minionSnap.addEventListener("click",function(){
-        if (player.coin >= 50  && minionSnap.innerText == "Buy") {
+        if (player.coin >= 20  && minionSnap.innerText == "Buy") {
             playerimg = { L: images.minion_L, R: images.minion_R };
             console.log("player images changed");
             player.coin -= 50;
