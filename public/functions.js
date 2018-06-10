@@ -41,10 +41,22 @@ function in_Player(bananas) {
 
     }
 }
-function buy_Minion() {
-    if (player.coin >= 50) {
-        player.coin -= 50;
-        var playerimg = { L: images.minion_L, R: images.minion_R };
-        console.log("player images changed");
-    }
+function preload(){
+    //    document.body.onload = addElement;
+    
+    //    function addElement() {
+        
+        //        // create a new div element 
+        //        var newP = document.createElement("p");
+        //        var footer = document.createElement("footer");
+        //        // and give it some content 
+        //        var newContent = document.createTextNode("By Varujan Margaryan");
+        //        // add the text node to the newly created div
+        //        newP.appendChild(newContent);
+        //        footer.appendChild(newP);
+        
+        //        // add the newly created element and its content into the DOM 
+        //        canvas.parentNode.insertBefore(footer, canvas.nextSibling);
+        
+        //    }
 }

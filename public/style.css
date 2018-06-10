@@ -17,4 +17,22 @@ canvas{
 .item{
     display:inline-block;
     float: left;
+    padding:20px;
+}
+div#shop{
+    border: 1px black solid;
+    display: table-caption;
+    float: left;
+}
+.buy{
+    display:block;
+    width: 98%;
+    text-align: center;
+    border: 3px blue solid;
+    color:blue;
+    font-size: 30px;
+    font-family: 'Jua', sans-serif;
+}
+snap {
+    display: table-cell;
 }

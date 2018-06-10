@@ -34,11 +34,21 @@ function setup() {
         banana: loadImage('images/banana.png'),
         heart: loadImage('images/heart.png'),
         coin: loadImage('images/coin.png')
-    }
-    
+    };
+    playerimg = { L: images.monkey_L, R: images.monkey_R };
+    minionSnap.addEventListener("click",function(){
+        if (player.coin >= 50  && minionSnap.innerText == "Buy") {
+            playerimg = { L: images.minion_L, R: images.minion_R };
+            console.log("player images changed");
+            player.coin -= 50;
+            minionSnap.innerText = "Equiped"
+            minionSnap.style.color = "green"
+        }
+    })
 }
 
 function draw() {
+
     var scoreimg = images.ananas;
     if (player.life <= 0) {
         GameOver();
@@ -68,14 +78,14 @@ function draw() {
     
     
     //__________________LEVELS______________
-    if (player.score < 200 && !buy) {//level1
-        playerimg = { L: images.monkey_L, R: images.monkey_R };
-        scoreimg = images.ananas
-    }
-    if (player.score >= 200) {//LEVEL 2
-        playerimg = { L: images.minion_L, R: images.minion_R };
-        scoreimg = images.banana
-    }
+    // if (player.score < 200 && !buy) {//level1
+    //     playerimg = { L: images.monkey_L, R: images.monkey_R };
+    //     scoreimg = images.ananas
+    // }
+    // if (player.score >= 200) {//LEVEL 2
+    //     playerimg = { L: images.minion_L, R: images.minion_R };
+    //     scoreimg = images.banana
+    // }
 
     
     background("white");
@@ -136,7 +146,6 @@ function draw() {
         if (Math.abs(coinOX - playerOX) <= side * (3 / 2) && Math.abs(coinOY - playerOY) <= side * (3 / 2)) {
             coins.splice(i, 1);
             player.coin++;
-            coinElem.innerHTML = "Coins: " + player.coin;
             player.score++;
             scoreElem.innerHTML = "Score: " + player.score;
         }
@@ -144,6 +153,7 @@ function draw() {
             coins.splice(i, 1);
         }
     }
+    coinElem.innerHTML = "Coins: " + player.coin;
     
     
     if (keyIsDown(RIGHT_ARROW)) {
@@ -160,26 +170,10 @@ function draw() {
 // setInterval(function(){
     //     FPS++;
     // },1000);
-    document.body.onload = addElement;
-    
-function addElement() {
-    
-    // create a new div element 
-    var newP = document.createElement("p");
-    var footer = document.createElement("footer");
-    // and give it some content 
-    var newContent = document.createTextNode("By Varujan Margaryan");
-    // add the text node to the newly created div
-    newP.appendChild(newContent);
-    footer.appendChild(newP);
-    
-    // add the newly created element and its content into the DOM 
-    canvas.parentNode.insertBefore(footer, canvas.nextSibling);
-}
+
 
 // function coins(){
 //     playerimg = { L: images.minion_L, R: images.minion_R };
     
 // }
-var minionDiv = document.getElementById('minion');
-minionDiv.onclick = buy_Minion()
+var minionSnap = document.getElementById('minion');
