@@ -12,9 +12,9 @@ var playerStep = 6, bananaStep = 2, heartStep = 1, coinStep = 3
 var images, level, scoreimg, buy = false, right = true, pause = false
 var items = [
     { name: 'monkey', price: 0, buy: "Equiped", HTML: '' },
-    { name: 'minion', price: 10, buy: "Buy", HTML: '' },
-    { name: 'mario', price: 20, buy: "Buy", HTML: '' },
-    { name: 'batman', price: 50, buy: "Buy", HTML: '' }
+    { name: 'minion', price: 1, buy: "Buy", HTML: '' },
+    { name: 'mario', price: 2, buy: "Buy", HTML: '' },
+    { name: 'batman', price: 5, buy: "Buy", HTML: '' }
 ]
 var mainDiv = document.getElementById("main");
 
