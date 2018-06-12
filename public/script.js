@@ -11,10 +11,10 @@ var playerStep = 8, bananaStep = 2, heartStep = 1, coinStep = 3
 var images, level, scoreimg, buy = false, right = true, pause = false, inShop = false,gameover=false;
 var items = [
     { name: 'monkey', price: 0, buy: "Equiped", image: "images/monkey_R.png", HTML: '' },
-    { name: 'minion', price: 10, buy: "Buy", image: "images/minion_R.png", HTML: '' },
-    { name: 'mario', price: 20, buy: "Buy", image: "images/mario_R.png", HTML: '' },
-    { name: 'sonic', price: 25, buy: "Buy", image: "images/sonic_R.png", HTML: '' },
-    { name: 'batman', price: 40, buy: "Buy", image: "images/batman_R.png", HTML: '' },
+    { name: 'minion', price: 5, buy: "Buy", image: "images/minion_R.png", HTML: '' },
+    { name: 'mario', price: 10, buy: "Buy", image: "images/mario_R.png", HTML: '' },
+    { name: 'sonic', price: 15, buy: "Buy", image: "images/sonic_R.png", HTML: '' },
+    { name: 'batman', price: 30, buy: "Buy", image: "images/batman_R.png", HTML: '' },
     { name: 'deadpool', price: 50, buy: "Buy", image: "images/deadpool_R.png", HTML: '' },
     { name: 'extralife', price: 10, buy: "Buy", image: "images/heart.png", HTML: '' }
 
