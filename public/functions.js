@@ -94,17 +94,14 @@ function Pause_Game() {
     for (let banana of bananas) {
         let x = banana.x;
         let y = banana.y;
-        banana.y += bananaStep;
     }
     for (let heart of hearts) {
         let x = heart.x;
         let y = heart.y;
-        heart.y += heartStep;
     }
     for (let coin of coins) {
         let x = coin.x;
         let y = coin.y;
-        coin.y += coinStep;
     }
     fill(0);
     textSize(50);
