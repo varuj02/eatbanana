@@ -3,7 +3,7 @@ var canvasWidth = 25;
 var side = 50;
 
 var bananas = [], hearts = [], coins = []
-var player = { x: 0, y: (canvasHeight - 2) * side, score: 0, life: 5, coin: 1000 }
+var player = { x: 0, y: (canvasHeight - 2) * side, score: 0, life: 5, coin: 0 }
 var interval = 150;// /FPS  sec
 var time = 0; //sec
 var time2 = 0;
