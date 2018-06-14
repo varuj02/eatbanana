@@ -3,7 +3,7 @@ var canvasWidth = 25;
 var side = 50;
 
 var bananas = [], hearts = [], coins = []
-var player = { x: 0, y: (canvasHeight - 2) * side, score: 0, life: 5, coin: 0 }
+var player = { x: 0, y: (canvasHeight - 2) * side, score: 0, life: 5, coin: 1000 }
 var interval = 150;// /FPS  sec
 var time = 0; //sec
 var time2 = 0;
@@ -15,7 +15,7 @@ var items = [
     { name: 'mario', price: 10, buy: "Buy", image: "images/mario_R.png", HTML: '' },
     { name: 'sonic', price: 15, buy: "Buy", image: "images/sonic_R.png", HTML: '' },
     { name: 'batman', price: 30, buy: "Buy", image: "images/batman_R.png", HTML: '' },
-    { name: 'deadpool', price: 50, buy: "Buy", image: "images/deadpool_R.png", HTML: '' },
+   // { name: 'deadpool', price: 50, buy: "Buy", image: "images/deadpool_R.png", HTML: '' },
     { name: 'extralife', price: 10, buy: "Buy", image: "images/heart.png", HTML: '' }
 
 ]
@@ -48,7 +48,8 @@ function setup() {
         batman_score: loadImage("images/batman_score.png"),
         deadpool_score: loadImage("images/deadpool_score.png"),
         heart: loadImage('images/heart.png'),
-        coin: loadImage('images/coin.png')
+        coin: loadImage('images/coin.png'),
+        bg: loadImage('images/bg1.jpg')
     };
     playerimg = { L: images.monkey_L, R: images.monkey_R };
     scoreimg = images.monkey_score;
@@ -73,7 +74,7 @@ function draw() {
     }
     coinElem.innerHTML = "Coins: " + player.coin;
     if (inShop) {
-         background('lightgray')
+         background('#AED6F1')
         return
     }
     //__________________LEVELS______________
@@ -87,8 +88,8 @@ function draw() {
     // }
 
 
-    background("white");
-
+    //background("white");
+    image(images.bg,0,0)
     //DRAW PLAYER
     if (right) {
         image(playerimg.R, player.x, player.y, 2 * side, 2 * side);
@@ -496,45 +497,45 @@ batman.onclick = function () {
 }
 
 
-deadpool.onclick = function () {
-    item = items[5]
+// deadpool.onclick = function () {
+//     item = items[5]
     
-    if (item.buy == "Equip") {
-        scoreimg = loadImage("images/" + item.name + "_score.png")
-        playerimg = { L: loadImage("images/" + item.name + "_L.png"), R: loadImage("images/" + item.name + "_R.png") };
-        for (let item of items) {
-            if (item.buy == "Equiped") {
-                item.buy = "Equip";
-                item.HTML.buy.innerHTML = item.buy;
-                item.HTML.buy.style.color = "red"
-            }
-        }
-        item.buy = "Equiped";
-        item.HTML.buy.innerText = item.buy;
-        item.HTML.buy.style.color = "green";
-    }
-    else if (player.coin >= item.price && item.buy == "Buy") {
-        scoreimg = loadImage("images/" + item.name + "_score.png")
-        playerimg = { L: loadImage("images/" + item.name + "_L.png"), R: loadImage("images/" + item.name + "_R.png") };
-        for (let item of items) {
-            if (item.buy == "Equiped") {
-                item.buy = "Equip";
-                item.HTML.buy.innerHTML = item.buy;
-                item.HTML.buy.style.color = "red"
-            }
-        }
-        player.coin -= item.price;
-        console.log("equiped")
-        item.buy = "Equiped";
-        item.HTML.buy.innerText = item.buy;
-        item.HTML.buy.style.color = "green";
-    }
-}
+//     if (item.buy == "Equip") {
+//         scoreimg = loadImage("images/" + item.name + "_score.png")
+//         playerimg = { L: loadImage("images/" + item.name + "_L.png"), R: loadImage("images/" + item.name + "_R.png") };
+//         for (let item of items) {
+//             if (item.buy == "Equiped") {
+//                 item.buy = "Equip";
+//                 item.HTML.buy.innerHTML = item.buy;
+//                 item.HTML.buy.style.color = "red"
+//             }
+//         }
+//         item.buy = "Equiped";
+//         item.HTML.buy.innerText = item.buy;
+//         item.HTML.buy.style.color = "green";
+//     }
+//     else if (player.coin >= item.price && item.buy == "Buy") {
+//         scoreimg = loadImage("images/" + item.name + "_score.png")
+//         playerimg = { L: loadImage("images/" + item.name + "_L.png"), R: loadImage("images/" + item.name + "_R.png") };
+//         for (let item of items) {
+//             if (item.buy == "Equiped") {
+//                 item.buy = "Equip";
+//                 item.HTML.buy.innerHTML = item.buy;
+//                 item.HTML.buy.style.color = "red"
+//             }
+//         }
+//         player.coin -= item.price;
+//         console.log("equiped")
+//         item.buy = "Equiped";
+//         item.HTML.buy.innerText = item.buy;
+//         item.HTML.buy.style.color = "green";
+//     }
+// }
 
 extralife.onclick = function () {
-    item = items[6]
+    item = items[5]
     
-    if (player.coin >= item.price && gameover) {
+    if (player.coin >= item.price && !gameover) {
         player.life++;
         player.coin -= item.price;
         lifeElem.innerHTML = "Life: " + player.life;

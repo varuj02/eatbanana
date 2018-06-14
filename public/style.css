@@ -1,6 +1,6 @@
 
 body{
-    background-color: lightgray;
+    background-color: #AED6F1;
 }
 #main{
     margin: 0 1%;
@@ -21,8 +21,7 @@ canvas{
     margin:0 20px;
     display:inline-block;
     border-radius: 5px;
-    background-color:burlywood;
-
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
 }
 #score,#life,#coin{
     width: 150px;
@@ -46,9 +45,9 @@ div#shop{
     border: 1px black solid;
     display: table-caption;
     float: left;
-    margin:0 3%;
+    margin-left: 20%;
     padding: 5px 0 5px 20px;
-    max-width:85%;
+    max-width:50%;
     position: absolute;
     top: 80px;
     left:0;
@@ -81,5 +80,5 @@ img#shop{
     margin-right: 50px;
 }
 .item_Img{
-    width: 80px;
+    height: 80px;
 }
